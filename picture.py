@@ -16,43 +16,43 @@ class Picture:
     vertical = []
     for value in self.img:
     	vertical.append(value[::-1])
-    return vertical
+    return Picture(vertical)
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
-    horizontal = []
-    for value in reversed(self.img):
-      horizontal.append(value)
-    return Picture(horizontal)
+    return Picture(self.img[::-1])
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
-    return Picture(None)
+    inverted_img = [''.join([self._invColor(c) for c in row]) for row in self.img]
+    return Picture(inverted_img)
 
   def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
-        al lado derecho de la figura actual """
-    return Picture(None)
+    """ Devuelve una nueva figura poniendo la figura del argumento al lado derecho de la figura actual """
+    joined_img = [s_row + p_row for s_row, p_row in zip(self.img, p.img)]
+    return Picture(joined_img)
 
   def up(self, p):
-    return Picture(None)
+    return Picture(self.img + p.img)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
-    return Picture(None)
+    """ Devuelve una nueva figura poniendo la figura p sobre la figura actual """
+    return Picture(p.img + self.img)
   
   def horizontalRepeat(self, n):
-    """ Devuelve una nueva figura repitiendo la figura actual al costado
-        la cantidad de veces que indique el valor de n """
-    return Picture(None)
+    """ Devuelve una nueva figura repitiendo la figura actual al costado n veces """
+    return Picture([row * n for row in self.img])
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    return Picture(self.img * n)
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
-    """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-    o antihorario"""
-    return Picture(None)
-
+    """Devuelve una figura rotada en 90 grados en sentido horario"""
+    if not self.img:
+        return Picture([])
+    rotated_img = []
+    for col in range(len(self.img[0])):
+        new_row = ''.join([row[col] for row in self.img])[::-1]
+        rotated_img.append(new_row)
+    return Picture(rotated_img)
