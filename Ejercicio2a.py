@@ -2,6 +2,8 @@ from chessPictures import *
 from interpreter import draw
 from picture import Picture
 
+# blanco/negro
+# negro/blanco
 knight = Picture(KNIGHT)
 knight_neg = knight.negative()
 
