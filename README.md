@@ -125,43 +125,13 @@ class Picture:
         return Picture(self.img * n)
 ```
 
----
-
-## 🌟 Resultados
-
-Después de implementar y probar cada método de forma individual, se utilizaron para construir composiciones más complejas, incluyendo:
-
-* Cuadrados alternados blanco/negro.
-* Filas con peones y otras piezas.
-* Tablero completo de ajedrez 8x8 con piezas ubicadas en sus posiciones iniciales.
-
-Estas figuras se visualizaron utilizando:
-
-```python
-from interpreter import draw
-from chessPictures import *
-draw(rock.horizontalMirror())
-```
-
----
 
 ## 🔧 Repositorio y Control de Versiones
 
 Este proyecto fue gestionado con Git, permitiendo el seguimiento detallado de los cambios mediante *commits*. Puedes acceder al repositorio en GitHub desde el siguiente enlace:
 
-🔗 [Repositorio GitHub - Tarea del Ajedrez](https://github.com/rescobedoq/pw2/tree/main/labs/lab04/Tarea-del-Ajedrez)
+🔗 [Repositorio GitHub - Tarea del Ajedrez](https://github.com/JerryAndersonh/Lab5-python)
 
----
-
-## 📸 Evidencia de Commits
-
-A continuación, se muestra una imagen con el historial de *commits* realizados durante el desarrollo:
-
-![Evidencia de Commits](ruta/a/la/imagen.png)
-
-> Reemplaza `ruta/a/la/imagen.png` por la ubicación de tu imagen de commits dentro del repositorio (puede ser `assets/commits.png` por ejemplo).
-
----
 
 ## ✅ Conclusión
 
@@ -171,4 +141,4 @@ El resultado fue la construcción modular de un tablero de ajedrez completamente
 
 ---
 
-🗓️ *Trabajo realizado por \[Tu Nombre Aquí], para el curso de Programación Web II.*
+🗓️ *Trabajo realizado por Jerry Anderson Huaynacho Mango, para el curso de Programación Web II.*
