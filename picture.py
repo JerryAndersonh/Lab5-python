@@ -45,14 +45,14 @@ class Picture:
 
   def verticalRepeat(self, n):
     return Picture(self.img * n)
-
-  #Extra: Sólo para realmente viciosos 
-  def rotate(self):
-    """Devuelve una figura rotada en 90 grados en sentido horario"""
-    if not self.img:
-        return Picture([])
-    rotated_img = []
-    for col in range(len(self.img[0])):
-        new_row = ''.join([row[col] for row in self.img])[::-1]
-        rotated_img.append(new_row)
-    return Picture(rotated_img)
+  
+  def superponer(pieza, casilla):
+    """Superpone la pieza sobre la casilla, asumiendo que tienen las mismas dimensiones."""
+    filas_combinadas = []
+    for fila_pieza, fila_casilla in zip(pieza.img, casilla.img):
+        fila_combinada = []
+        for p, c in zip(fila_pieza, fila_casilla):
+            # Si el carácter de la pieza no es "transparente", usar ese
+            fila_combinada.append(p if p != ' ' else c)
+        filas_combinadas.append(''.join(fila_combinada))
+    return Picture(filas_combinadas)
