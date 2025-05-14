@@ -1,4 +1,4 @@
-# 🧠 Tarea: Dibujar un Tablero de Ajedrez en Python
+# Tablero de Ajedrez en Python
 
 ## 📌 Descripción General
 
@@ -6,7 +6,7 @@ Esta tarea tuvo como objetivo aplicar los conocimientos adquiridos en programaci
 
 ---
 
-## ⚙️ Preparación del Entorno
+## ⚙Preparación del Entorno
 
 Para el correcto desarrollo de la tarea, se realizó la configuración de un entorno virtual llamado `venv` con el siguiente procedimiento:
 
@@ -26,7 +26,7 @@ Este entorno permitió mantener el proyecto organizado y aislado de otras config
 
 ---
 
-## 🧩 Objetivos de la Tarea
+##  Objetivos de la Tarea
 
 * Implementar métodos que manipulen imágenes de piezas de ajedrez representadas como listas de strings.
 * Utilizar herramientas básicas de Python como comprensión de listas, `map`, `zip`, `range`, operaciones con strings y estructuras de control.
@@ -45,7 +45,7 @@ Este entorno permitió mantener el proyecto organizado y aislado de otras config
 
 ---
 
-## 🧪 Métodos Implementados en la Clase `Picture`
+##  Métodos Implementados en la Clase `Picture`
 
 Se implementaron los siguientes métodos en la clase `Picture`, los cuales operan sobre el atributo `img`, que es una lista de strings:
 
@@ -133,7 +133,7 @@ Este proyecto fue gestionado con Git, permitiendo el seguimiento detallado de lo
 🔗 [Repositorio GitHub - Tarea del Ajedrez](https://github.com/JerryAndersonh/Lab5-python)
 
 
-## ✅ Conclusión
+## Conclusión
 
 Esta tarea representó una excelente oportunidad para consolidar conceptos fundamentales de Python, especialmente en el trabajo con listas, comprensión de listas y manipulación de strings. Además, permitió ejercitar la creatividad al componer imágenes y reforzar el uso de Git como herramienta de control de versiones.
 
@@ -141,4 +141,4 @@ El resultado fue la construcción modular de un tablero de ajedrez completamente
 
 ---
 
-🗓️ *Trabajo realizado por Jerry Anderson Huaynacho Mango, para el curso de Programación Web II.*
+️ *Trabajo realizado por Jerry Anderson Huaynacho Mango, para el curso de Programación Web II.*
