@@ -26,7 +26,6 @@ def colocar_sobre_casillas(piezas, fila_clara_primero):
     fila = []
     for i, pieza in enumerate(piezas):
         casilla = blanco if (i + fila_clara_primero) % 2 == 0 else negro
-        # Superponer pieza sobre casilla
         pieza_con_fondo = Picture.superponer(pieza, casilla)
         fila.append(pieza_con_fondo)
     
@@ -35,31 +34,41 @@ def colocar_sobre_casillas(piezas, fila_clara_primero):
         resultado = resultado.join(p)
     return resultado
 
-# Fila 1: negras
+def fila_vacia(fila_clara_primero):
+    fila = []
+    for i in range(8):
+        casilla = blanco if (i + fila_clara_primero) % 2 == 0 else negro
+        fila.append(casilla)
+    resultado = fila[0]
+    for c in fila[1:]:
+        resultado = resultado.join(c)
+    return resultado
+
+# Fila 1: piezas blancas (casilla negra primero)
 fila1 = colocar_sobre_casillas(
     [torre_b, caballo_b, alfil_b, reina_b, rey_b, alfil_b, caballo_b, torre_b],
     fila_clara_primero=1
 )
 
-# Fila 2: peones negros
+# Fila 2: peones blancos (casilla blanca primero)
 fila2 = colocar_sobre_casillas([peon_b]*8, fila_clara_primero=0)
 
-# Filas 3–6: casillas vacías 
-fila3 = blanco.join(negro).horizontalRepeat(4)
-fila4 = negro.join(blanco).horizontalRepeat(4)
-fila5 = fila3
-fila6 = fila4
+# Filas 3–6: vacías, alternando color
+fila3 = fila_vacia(fila_clara_primero=1)
+fila4 = fila_vacia(fila_clara_primero=0)
+fila5 = fila_vacia(fila_clara_primero=1)
+fila6 = fila_vacia(fila_clara_primero=0)
 
-# Fila 7: peones blancos
-fila7 = colocar_sobre_casillas([peon_n]*8, fila_clara_primero=0)
+# Fila 7: peones negros (casilla negra primero)
+fila7 = colocar_sobre_casillas([peon_n]*8, fila_clara_primero=1)
 
-# Fila 8: blancas
+# Fila 8: piezas negras (casilla blanca primero)
 fila8 = colocar_sobre_casillas(
     [torre_n, caballo_n, alfil_n, reina_n, rey_n, alfil_n, caballo_n, torre_n],
-    fila_clara_primero=1
+    fila_clara_primero=0
 )
 
-# tablero completo 
+# Tablero completo
 tablero = (
     fila1
     .under(fila2)
